@@ -26,6 +26,7 @@
     "jest": "^19.0.2"
   },
   "dependencies": {
-    "crudl-connectors-base": "git+ssh://git@github.com/crudlio/crudl-connectors-base.git"
+    "crudl-connectors-base": "git+ssh://git@github.com/crudlio/crudl-connectors-base.git",
+    "lodash": "^4.17.4"
   }
 }
