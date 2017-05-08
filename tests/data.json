@@ -1,0 +1,248 @@
+{
+  "tags": {
+    "page1": {
+      "total": 38,
+      "count": 38,
+      "next": "http://127.0.0.1:8000/rest-api/tags/?page=2",
+      "previous": null,
+      "results": [
+        {
+          "id": 12,
+          "name": "api",
+          "slug": "api",
+          "counter_entries": 2
+        },
+        {
+          "id": 1,
+          "name": "backend",
+          "slug": "backend",
+          "counter_entries": 0
+        },
+        {
+          "id": 37,
+          "name": "beginner",
+          "slug": "beginner",
+          "counter_entries": 1
+        },
+        {
+          "id": 41,
+          "name": "browserify",
+          "slug": "browserify",
+          "counter_entries": 0
+        },
+        {
+          "id": 19,
+          "name": "changeview",
+          "slug": "changeview",
+          "counter_entries": 0
+        },
+        {
+          "id": 34,
+          "name": "component",
+          "slug": "component",
+          "counter_entries": 1
+        },
+        {
+          "id": 7,
+          "name": "connector",
+          "slug": "connector",
+          "counter_entries": 1
+        },
+        {
+          "id": 16,
+          "name": "customization",
+          "slug": "customization",
+          "counter_entries": 2
+        },
+        {
+          "id": 17,
+          "name": "dashboard",
+          "slug": "dashboard",
+          "counter_entries": 1
+        },
+        {
+          "id": 21,
+          "name": "deployment",
+          "slug": "deployment",
+          "counter_entries": 2
+        },
+        {
+          "id": 8,
+          "name": "descriptor",
+          "slug": "descriptor",
+          "counter_entries": 1
+        },
+        {
+          "id": 22,
+          "name": "django",
+          "slug": "django",
+          "counter_entries": 2
+        },
+        {
+          "id": 36,
+          "name": "documentation",
+          "slug": "documentation",
+          "counter_entries": 0
+        },
+        {
+          "id": 40,
+          "name": "expert",
+          "slug": "expert",
+          "counter_entries": 0
+        },
+        {
+          "id": 25,
+          "name": "express",
+          "slug": "express",
+          "counter_entries": 2
+        },
+        {
+          "id": 23,
+          "name": "flask",
+          "slug": "flask",
+          "counter_entries": 1
+        },
+        {
+          "id": 11,
+          "name": "graphql",
+          "slug": "graphql",
+          "counter_entries": 4
+        },
+        {
+          "id": 27,
+          "name": "hapi",
+          "slug": "hapi",
+          "counter_entries": 1
+        },
+        {
+          "id": 38,
+          "name": "intermediate",
+          "slug": "intermediate",
+          "counter_entries": 0
+        },
+        {
+          "id": 28,
+          "name": "koa",
+          "slug": "koa",
+          "counter_entries": 1
+        }
+      ]
+    },
+    "page2": {
+      "total": 38,
+      "count": 38,
+      "next": null,
+      "previous": "http://127.0.0.1:8000/rest-api/tags/",
+      "results": [
+        {
+          "id": 29,
+          "name": "laravel",
+          "slug": "laravel",
+          "counter_entries": 1
+        },
+        {
+          "id": 18,
+          "name": "listview",
+          "slug": "listview",
+          "counter_entries": 0
+        },
+        {
+          "id": 43,
+          "name": "mongodb",
+          "slug": "mongodb",
+          "counter_entries": 1
+        },
+        {
+          "id": 44,
+          "name": "mysql",
+          "slug": "mysql",
+          "counter_entries": 0
+        },
+        {
+          "id": 30,
+          "name": "nginx 2.0",
+          "slug": "nginx-20",
+          "counter_entries": 1
+        },
+        {
+          "id": 24,
+          "name": "node",
+          "slug": "node",
+          "counter_entries": 2
+        },
+        {
+          "id": 35,
+          "name": "npm",
+          "slug": "npm",
+          "counter_entries": 0
+        },
+        {
+          "id": 14,
+          "name": "permissions",
+          "slug": "permissions",
+          "counter_entries": 0
+        },
+        {
+          "id": 45,
+          "name": "postgresql",
+          "slug": "postgresql",
+          "counter_entries": 1
+        },
+        {
+          "id": 47,
+          "name": "python",
+          "slug": "python",
+          "counter_entries": 2
+        },
+        {
+          "id": 26,
+          "name": "rails",
+          "slug": "rails",
+          "counter_entries": 1
+        },
+        {
+          "id": 20,
+          "name": "react",
+          "slug": "react",
+          "counter_entries": 1
+        },
+        {
+          "id": 10,
+          "name": "rest",
+          "slug": "rest",
+          "counter_entries": 3
+        },
+        {
+          "id": 46,
+          "name": "rethinkdb",
+          "slug": "rethinkdb",
+          "counter_entries": 0
+        },
+        {
+          "id": 32,
+          "name": "server",
+          "slug": "server",
+          "counter_entries": 2
+        },
+        {
+          "id": 33,
+          "name": "tests",
+          "slug": "tests",
+          "counter_entries": 0
+        },
+        {
+          "id": 4,
+          "name": "ui",
+          "slug": "ui",
+          "counter_entries": 2
+        },
+        {
+          "id": 6,
+          "name": "usability",
+          "slug": "usability",
+          "counter_entries": 0
+        }
+      ]
+    }
+  }
+}
