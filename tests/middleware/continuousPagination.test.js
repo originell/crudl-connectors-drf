@@ -56,7 +56,7 @@ it('gets correct pagination info for the first page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual([1, 2, 3]);
+    expect(res.data).toEqual(firstPage.data);
   });
 });
 
@@ -70,7 +70,7 @@ it('gets correct pagination info for the middle page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual([4, 5, 6]);
+    expect(res.data).toEqual(middlePage.data);
   });
 });
 
@@ -84,7 +84,7 @@ it('gets correct pagination info for the last page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual([7, 8]);
+    expect(res.data).toEqual(lastPage.data);
   });
 });
 
