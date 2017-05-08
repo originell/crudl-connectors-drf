@@ -1,4 +1,5 @@
 /* globals require, jest, expect, describe, it, beforeEach */
+const { createFrontendConnector } = require('crudl-connectors-base');
 const numberedPagination = require('../../lib/middleware/numberedPagination');
 
 const success = res => ({
@@ -47,8 +48,7 @@ const noPage = {
 };
 
 it('gets correct pagination info for the first page', () => {
-  const mw = numberedPagination();
-  const c = mw(success(firstPage));
+  const c = createFrontendConnector(success(firstPage)).use(numberedPagination());
   return c.read().then((res) => {
     expect(res.pagination).toEqual({
       type: 'numbered',
@@ -57,13 +57,12 @@ it('gets correct pagination info for the first page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual(firstPage.data);
+    expect(res.slice(0)).toEqual([1, 2, 3]);
   });
 });
 
 it('gets correct pagination info for the middle page', () => {
-  const mw = numberedPagination();
-  const c = mw(success(middlePage));
+  const c = createFrontendConnector(success(middlePage)).use(numberedPagination());
   return c.read().then((res) => {
     expect(res.pagination).toEqual({
       type: 'numbered',
@@ -72,13 +71,12 @@ it('gets correct pagination info for the middle page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual(middlePage.data);
+    expect(res.slice(0)).toEqual([4, 5, 6]);
   });
 });
 
 it('gets correct pagination info for the last page', () => {
-  const mw = numberedPagination();
-  const c = mw(success(lastPage));
+  const c = createFrontendConnector(success(lastPage)).use(numberedPagination());
   return c.read().then((res) => {
     expect(res.pagination).toEqual({
       type: 'numbered',
@@ -87,7 +85,7 @@ it('gets correct pagination info for the last page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual(lastPage.data);
+    expect(res.slice(0)).toEqual([7, 8]);
   });
 });
 

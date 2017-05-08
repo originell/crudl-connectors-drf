@@ -1,4 +1,5 @@
 /* globals require, jest, expect, describe, it, beforeEach */
+const { createFrontendConnector } = require('crudl-connectors-base');
 const continuousPagination = require('../../lib/middleware/continuousPagination');
 
 const success = res => ({
@@ -46,9 +47,8 @@ const noPage = {
   data: [],
 };
 
-it('gets correct pagination info for the first page', () => {
-  const mw = continuousPagination();
-  const c = mw(success(firstPage));
+it('includes correct pagination info for the first page', () => {
+  const c = createFrontendConnector(success(firstPage)).use(continuousPagination());
   return c.read().then((res) => {
     expect(res.pagination).toEqual({
       type: 'continuous',
@@ -56,13 +56,12 @@ it('gets correct pagination info for the first page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual(firstPage.data);
+    expect(res.slice(0)).toEqual([1, 2, 3]);
   });
 });
 
-it('gets correct pagination info for the middle page', () => {
-  const mw = continuousPagination();
-  const c = mw(success(middlePage));
+it('includes correct pagination info for the middle page', () => {
+  const c = createFrontendConnector(success(middlePage)).use(continuousPagination());
   return c.read().then((res) => {
     expect(res.pagination).toEqual({
       type: 'continuous',
@@ -70,13 +69,12 @@ it('gets correct pagination info for the middle page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual(middlePage.data);
+    expect(res.slice(0)).toEqual([4, 5, 6]);
   });
 });
 
-it('gets correct pagination info for the last page', () => {
-  const mw = continuousPagination();
-  const c = mw(success(lastPage));
+it('includes correct pagination info for the last page', () => {
+  const c = createFrontendConnector(success(lastPage)).use(continuousPagination());
   return c.read().then((res) => {
     expect(res.pagination).toEqual({
       type: 'continuous',
@@ -84,7 +82,7 @@ it('gets correct pagination info for the last page', () => {
       resultsTotal: 24,
       filteredTotal: 8,
     });
-    expect(res.data).toEqual(lastPage.data);
+    expect(res.slice(0)).toEqual([7, 8]);
   });
 });
 
