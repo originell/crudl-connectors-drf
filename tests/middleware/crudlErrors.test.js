@@ -1,5 +1,5 @@
 /* globals require, jest, expect, describe, it */
-const errors = require('../../lib/middleware/errors');
+const errors = require('../../lib/middleware/crudlErrors');
 
 const fail = (status, data, statusText) => ({
   create: () => Promise.reject({ status, data, statusText }),
