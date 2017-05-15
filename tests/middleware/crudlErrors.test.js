@@ -10,9 +10,10 @@ const fail = (status, data, statusText) => ({
 
 describe('Throws correct errors', () => {
   it('Throws validation error', () => errors(fail(400, {})).create()
-  .catch(
-    error => expect(error.validationErrors).toEqual({}),
-  ));
+  .catch((error) => {
+    expect(error.validationError).toEqual(true);
+    expect(error.errors).toEqual({});
+  }));
 
   it('Throws authorization error', () => errors(fail(401, {})).read()
   .catch(
@@ -38,7 +39,7 @@ describe('Transforms errors correctly', () => {
     }));
 
     c.create().catch(
-      error => expect(error.validationErrors).toEqual({
+      error => expect(error.errors).toEqual({
         _error: 'xxx',
         firstName: 'required',
       }),
@@ -52,7 +53,7 @@ describe('Transforms errors correctly', () => {
     }));
 
     c.create().catch(
-      error => expect(error.validationErrors).toEqual({
+      error => expect(error.errors).toEqual({
         firstName: 'required',
         lastName: 'required',
       }),
