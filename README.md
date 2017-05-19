@@ -16,7 +16,7 @@ const { createDRFConnector } = require('crudl-connectors-drf');
 const blogEntries = createDRFConnector('localhost:8080/api/v1/entries');
 
 blogEntries.read().then((entries) => {
-	// Do something with the entries
+  // Do something with the entries
 });
 ```
 
@@ -54,13 +54,13 @@ const { numberedPagination } = require('crudl-connectors-drf/lib/middleware')
 const tags = createDRFConnector('localhost:8080/api/v1/tags/').use(numberedPagination());
 
 tags.read().then(results => {
-	console.log(results.length); // 20
-	console.log(results.pagination); // { type: 'numbered', allPages: [1, 2, 3], currentPage: 1 }
+  console.log(results.length); // 20
+  console.log(results.pagination); // { type: 'numbered', allPages: [1, 2, 3], currentPage: 1 }
 })
 
 tags.read({ page: 2 }).then(results => {
-	console.log(results.length); // 20
-	console.log(results.pagination); // { type: 'numbered', allPages: [1, 2, 3], currentPage: 2 }
+  console.log(results.length); // 20
+  console.log(results.pagination); // { type: 'numbered', allPages: [1, 2, 3], currentPage: 2 }
 })
 ```
 
@@ -75,17 +75,17 @@ const { createDRFConnector } = require('crudl-connectors-drf');
 const users = createDRFConnector('localhost:8080/api/v1/users/');
 
 function handleSubmit(data) {
-	return users.create({ data })
-	.catch((error) => {
-		if (error.validationError) {
-			throw new SubmissionError(error.errors)
-		}
-		if (error.authorizationError) {
-			// Redirect to login
-		}
-		if (error.permissionError) {
-			// Display warning
-		}
-	})
+  return users.create({ data })
+  .catch((error) => {
+    if (error.validationError) {
+      throw new SubmissionError(error.errors)
+    }
+    if (error.authorizationError) {
+      // Redirect to login
+    }
+    if (error.permissionError) {
+      // Display warning
+    }
+  })
 }
 ```
