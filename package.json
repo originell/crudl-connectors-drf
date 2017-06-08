@@ -1,6 +1,6 @@
 {
-  "name": "crudl-connectors-drf",
-  "version": "0.0.1",
+  "name": "@crudlio/crudl-connectors-drf",
+  "version": "0.1.0",
   "description": "Crudl connectors for Django REST Framework",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crudlio/crudl-connectors-drf.git"
+    "url": "https://github.com/crudlio/crudl-connectors-drf.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "admin",
+    "interface",
+    "api",
+    "crudl",
+  ],
+  "author": "vonautomatisch",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/crudlio/crudl-connectors-drf/issues"
   },
-  "homepage": "https://github.com/crudlio/crudl-connectors-drf#readme",
+  "homepage": "http://crudl.io",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "lib"
+  ],
   "devDependencies": {
     "babel-eslint": "^7.2.2",
     "eslint": "^3.19.0",
