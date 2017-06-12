@@ -12,7 +12,7 @@ $npm install --save @crudlio/crudl-connectors-drf
 ### Simple endpoint connector
 
 ```js
-const { createDRFConnector } = require('crudl-connectors-drf');
+const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
 const blogEntries = createDRFConnector('localhost:8080/api/v1/entries');
 
 blogEntries.read().then((entries) => {
@@ -23,7 +23,7 @@ blogEntries.read().then((entries) => {
 ### Parametrized endpoint connector
 
 ```js
-const { createDRFConnector } = require('crudl-connectors-drf');
+const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
 const user = createDRFConnector('localhost:8080/api/v1/users/:username/');
 
 const john = user('john');
@@ -36,7 +36,7 @@ john.delete();
 ### Setting defaults
 
 ```js
-const { createDRFConnector, defaults } = require('crudl-connectors-drf');
+const { createDRFConnector, defaults } = require('@crudlio/crudl-connectors-drf');
 
 // Set the default baseURL
 defaults.baseURL = 'localhost:8080/api/v1';
@@ -48,8 +48,8 @@ const blogEntry =  createDRFConnector('entries/:id/');
 ### Using pagination
 
 ```js
-const { createDRFConnector } = require('crudl-connectors-drf');
-const { numberedPagination } = require('crudl-connectors-drf/lib/middleware')
+const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
+const { numberedPagination } = require('@crudlio/crudl-connectors-drf/lib/middleware')
 
 const tags = createDRFConnector('localhost:8080/api/v1/tags/').use(numberedPagination());
 
@@ -70,7 +70,7 @@ Suppose `handleSubmit` is a [redux-form](http://redux-form.com/) submit handler 
 
 ```js
 const { SubmissionError } = require('redux-form');
-const { createDRFConnector } = require('crudl-connectors-drf');
+const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
 
 const users = createDRFConnector('localhost:8080/api/v1/users/');
 
