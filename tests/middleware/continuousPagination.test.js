@@ -1,5 +1,5 @@
 /* globals require, jest, expect, describe, it, beforeEach */
-const { createFrontendConnector } = require('crudl-connectors-base');
+const { createFrontendConnector } = require('@crudlio/crudl-connectors-base');
 const continuousPagination = require('../../lib/middleware/continuousPagination');
 
 const success = res => ({
