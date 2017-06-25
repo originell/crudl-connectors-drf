@@ -2,7 +2,7 @@
   "name": "@crudlio/crudl-connectors-drf",
   "version": "0.1.2",
   "description": "Crudl connectors for Django REST Framework",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "clean": "rimraf lib",
