@@ -1,6 +1,6 @@
 {
   "name": "@crudlio/crudl-connectors-drf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Crudl connectors for Django REST Framework",
   "main": "index.js",
   "scripts": {
