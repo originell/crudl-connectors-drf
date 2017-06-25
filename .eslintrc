@@ -6,6 +6,8 @@
     "node": true
   },
   "rules": {
-    "func-names": 0
+    "func-names": 0,
+    "semi": 0,
+    "indent": [error, 4]
   }
 }

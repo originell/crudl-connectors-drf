@@ -1,10 +1,5 @@
-'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var defaults = {
+const defaults = {
 
     // A string (e.g. 'localhost:3000/api/v2/')
     baseURL: '',
@@ -12,7 +7,7 @@ var defaults = {
     // The name of the query parameter (page_query_param of DRF)
     buildQuery: {
         pageQueryParam: 'page',
-        orderingParam: 'ordering'
+        orderingParam: 'ordering',
     },
 
     // How are the crud methods mapped to http methods
@@ -20,15 +15,15 @@ var defaults = {
         create: 'post',
         read: 'get',
         update: 'patch',
-        delete: 'delete'
+        delete: 'delete',
     },
 
     // Default settings for axios
     axios: {
         xsrfCookieName: 'csrftoken',
-        xsrfHeaderName: 'X-CSRFToken'
-    }
+        xsrfHeaderName: 'X-CSRFToken',
+    },
 
-};
+}
 
-exports.default = defaults;
+export default defaults
