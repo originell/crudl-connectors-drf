@@ -1,4 +1,4 @@
-const expect = require('expect')
+import expect from 'expect'
 
 function checkPagination(response) {
     try {
@@ -13,7 +13,7 @@ function url2page(url, options) {
     return match ? parseInt(match[1], 10) : 1
 }
 
-function continuousPagination(options = { pageQueryParam: 'page' }) {
+export default function continuousPagination(options = { pageQueryParam: 'page' }) {
     return function continuousPaginationMiddleware(next) {
         return {
             read: req => next.read(req).then((res) => {
@@ -31,5 +31,3 @@ function continuousPagination(options = { pageQueryParam: 'page' }) {
         }
     }
 }
-
-module.exports = continuousPagination

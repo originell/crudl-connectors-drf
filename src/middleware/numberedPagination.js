@@ -1,4 +1,4 @@
-const expect = require('expect')
+import expect from 'expect'
 
 function url2page(url, options) {
     const match = new RegExp(`${options.pageQueryParam}=(\\d+)`).exec(url)
@@ -54,7 +54,7 @@ function checkPagination(response) {
     }
 }
 
-function numberedPagination(options = { pageQueryParam: 'page' }) {
+export default function numberedPagination(options = { pageQueryParam: 'page' }) {
     return function numberedPaginationMiddleware(next) {
         return {
             read: req => next.read(req).then((res) => {
@@ -67,5 +67,3 @@ function numberedPagination(options = { pageQueryParam: 'page' }) {
         }
     }
 }
-
-module.exports = numberedPagination

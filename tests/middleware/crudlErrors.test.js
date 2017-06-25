@@ -1,5 +1,5 @@
 /* globals require, jest, expect, describe, it */
-const errors = require('../../src/middleware/crudlErrors')
+import errors from '../../src/middleware/crudlErrors'
 
 const fail = (status, data, statusText) => ({
     create: () => Promise.reject({ status, data, statusText }),

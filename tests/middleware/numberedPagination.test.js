@@ -1,6 +1,6 @@
 /* globals require, jest, expect, describe, it, beforeEach */
-const { createFrontendConnector } = require('@crudlio/crudl-connectors-base')
-const numberedPagination = require('../../src/middleware/numberedPagination')
+import { createFrontendConnector } from '@crudlio/crudl-connectors-base'
+import numberedPagination from '../../src/middleware/numberedPagination'
 
 const success = res => ({
     create: () => Promise.resolve(res),

@@ -12,55 +12,55 @@ $npm install --save @crudlio/crudl-connectors-drf
 ### Simple endpoint connector
 
 ```js
-const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
-const blogEntries = createDRFConnector('localhost:8080/api/v1/entries');
+import { createDRFConnector } from '@crudlio/crudl-connectors-drf'
+const blogEntries = createDRFConnector('localhost:8080/api/v1/entries')
 
 blogEntries.read().then((entries) => {
   // Do something with the entries
-});
+})
 ```
 
 ### Parametrized endpoint connector
 
 ```js
-const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
-const user = createDRFConnector('localhost:8080/api/v1/users/:username/');
+import { createDRFConnector } from '@crudlio/crudl-connectors-drf'
+const user = createDRFConnector('localhost:8080/api/v1/users/:username/')
 
-const john = user('john');
-const jane = user('jane');
+const john = user('john')
+const jane = user('jane')
 
-jane.update({ data: { email: 'jane@crudl.io' }});
-john.delete();
+jane.update({ data: { email: 'jane@crudl.io' }})
+john.delete()
 ```
 
 ### Setting defaults
 
 ```js
-const { createDRFConnector, defaults } = require('@crudlio/crudl-connectors-drf');
+import { createDRFConnector, defaults } from '@crudlio/crudl-connectors-drf'
 
 // Set the default baseURL
-defaults.baseURL = 'localhost:8080/api/v1';
+defaults.baseURL = 'localhost:8080/api/v1'
 
-const blogEntries = createDRFConnector('entries');
-const blogEntry =  createDRFConnector('entries/:id/');
+const blogEntries = createDRFConnector('entries')
+const blogEntry =  createDRFConnector('entries/:id/')
 ```
 
 ### Using pagination
 
 ```js
-const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
-const { numberedPagination } = require('@crudlio/crudl-connectors-drf/lib/middleware')
+import { createDRFConnector } from '@crudlio/crudl-connectors-drf'
+import { numberedPagination } from '@crudlio/crudl-connectors-drf/lib/middleware'
 
-const tags = createDRFConnector('localhost:8080/api/v1/tags/').use(numberedPagination());
+const tags = createDRFConnector('localhost:8080/api/v1/tags/').use(numberedPagination())
 
 tags.read().then(results => {
-  console.log(results.length); // 20
-  console.log(results.pagination); // { type: 'numbered', allPages: [1, 2, 3], currentPage: 1 }
+  console.log(results.length) // 20
+  console.log(results.pagination) // { type: 'numbered', allPages: [1, 2, 3], currentPage: 1 }
 })
 
 tags.read({ page: 2 }).then(results => {
-  console.log(results.length); // 20
-  console.log(results.pagination); // { type: 'numbered', allPages: [1, 2, 3], currentPage: 2 }
+  console.log(results.length) // 20
+  console.log(results.pagination) // { type: 'numbered', allPages: [1, 2, 3], currentPage: 2 }
 })
 ```
 
@@ -69,10 +69,10 @@ tags.read({ page: 2 }).then(results => {
 Suppose `handleSubmit` is a [redux-form](http://redux-form.com/) submit handler of a *create user* form.
 
 ```js
-const { SubmissionError } = require('redux-form');
-const { createDRFConnector } = require('@crudlio/crudl-connectors-drf');
+import { SubmissionError } from 'redux-form'
+import { createDRFConnector } from '@crudlio/crudl-connectors-drf'
 
-const users = createDRFConnector('localhost:8080/api/v1/users/');
+const users = createDRFConnector('localhost:8080/api/v1/users/')
 
 function handleSubmit(data) {
   return users.create({ data })

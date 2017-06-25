@@ -26,18 +26,18 @@ function transformErrors(errors) {
 
 function processError(response) {
     switch (response.status) {
-        case 400:
+    case 400:
         throw new ValidationError(transformErrors(response.data))
-        case 401:
+    case 401:
         throw new AuthorizationError()
-        case 403:
+    case 403:
         throw new PermissionError()
-        default:
+    default:
         throw new DefaultError(response.statusText)
     }
 }
 
-module.exports = function crudlErrors(next) {
+export default function crudlErrors(next) {
     return {
         create: req => next.create(req).catch(processError),
         read: req => next.read(req).catch(processError),

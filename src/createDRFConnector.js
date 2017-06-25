@@ -1,10 +1,10 @@
-const { createFrontendConnector, createBackendConnector } = require('@crudlio/crudl-connectors-base')
-const { crudToHttp, url } = require('@crudlio/crudl-connectors-base/lib/middleware')
+import { createFrontendConnector, createBackendConnector } from '@crudlio/crudl-connectors-base'
+import { crudToHttp, url } from '@crudlio/crudl-connectors-base/lib/middleware'
 
-const { buildQuery, crudlErrors } = require('./middleware')
-const defaults = require('./defaults')
+import { buildQuery, crudlErrors } from './middleware'
+import defaults from './defaults'
 
-function createDRFConnector(urlPath, opts) {
+export default function createDRFConnector(urlPath, opts) {
     if (typeof urlPath !== 'string') {
         throw new Error(`URL must be a string, found ${urlPath}.`)
     }
@@ -20,5 +20,3 @@ function createDRFConnector(urlPath, opts) {
 
     return drf
 }
-
-module.exports = createDRFConnector

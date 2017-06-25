@@ -1,8 +1,11 @@
-/* eslint-disable global-require */
+import buildQuery from './buildQuery'
+import crudlErrors from './crudlErrors'
+import continuousPagination from './continuousPagination'
+import numberedPagination from './numberedPagination'
 
-module.exports = {
-    buildQuery: require('./buildQuery'),
-    crudlErrors: require('./crudlErrors'),
-    continuousPagination: require('./continuousPagination'),
-    numberedPagination: require('./numberedPagination'),
+export {
+    buildQuery,
+    crudlErrors,
+    continuousPagination,
+    numberedPagination,
 }
