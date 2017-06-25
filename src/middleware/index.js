@@ -5,4 +5,4 @@ module.exports = {
   crudlErrors: require('./crudlErrors'),
   continuousPagination: require('./continuousPagination'),
   numberedPagination: require('./numberedPagination'),
-};
+}

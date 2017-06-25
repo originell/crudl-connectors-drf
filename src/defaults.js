@@ -24,6 +24,6 @@ const defaults = {
     xsrfHeaderName: 'X-CSRFToken',
   },
 
-};
+}
 
-module.exports = defaults;
+module.exports = defaults
