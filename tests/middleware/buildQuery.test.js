@@ -1,5 +1,5 @@
 /* globals require, jest, expect, describe, it */
-const buildQuery = require('../../lib/middleware/buildQuery');
+const buildQuery = require('../../src/middleware/buildQuery');
 
 function requestTesterConnector(test) {
   return {

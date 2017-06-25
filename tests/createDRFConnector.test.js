@@ -1,5 +1,5 @@
 /* globals require, jest, expect, describe, it */
-const createDRFConnector = require('../lib/createDRFConnector');
+const createDRFConnector = require('../src/createDRFConnector');
 
 it('builds the connector', () => {
   const c = createDRFConnector('/api/v1/test/');
