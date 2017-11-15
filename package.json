@@ -43,7 +43,7 @@
     "sinon": "^2.2.0"
   },
   "dependencies": {
-    "@crudlio/crudl-connectors-base": "git+https://github.com/originell/crudl-connectors-base.git#patch-2",
+    "@crudlio/crudl-connectors-base": "git+https://github.com/crudlio/crudl-connectors-base.git",
     "expect": "^1.20.2",
     "lodash": "^4.17.4"
   }
